@@ -14,6 +14,9 @@ class MySuperSumTests(unittest.TestCase):
 		self.assertEqual(super_sum([10,4], [5,6]), 25, msg='cannot add numbers in lists')
 	def test_lists_numbers(self):
 		self.assertEqual(super_sum([10,4], [5,6], 7, 8), 40, msg='cannot add numbers in lists and numbers outside lists')
+	def test_non_numbers(self):
+		with self.assertRaises(TypeError):
+			super_sum('man', '4')
 
 if __name__ == '__main__':
 	unittest.main()
