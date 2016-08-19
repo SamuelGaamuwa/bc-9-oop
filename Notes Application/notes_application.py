@@ -37,13 +37,13 @@ class NotesApplication(object):
     def delete(self, note_id):
         #method to delete note at index note_id in the notes list
         for note in self.notes:
-            if note.index() == note_id:
+            if self.notes.index(note) == note_id:
                 self.notes.pop(note)
 
     def edit(self, note_id, new_content):
         #method to replace content at index note_id with new content
         for note in self.notes:
-            if note.index() == note_id:
+            if self.notes.index(note) == note_id:
                 for note_content in note.values():
                     note_content = new_content
         return "Note ID: "+str(note_id)+" edited\n\n"
