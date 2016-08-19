@@ -44,16 +44,9 @@ class NotesApplication(object):
         #method to replace content at index note_id with new content
         for note in self.notes:
             if self.notes.index(note) == note_id:
-                for note_content in note.values():
-                    note_content = new_content
+                new_note = {}
+                new_note[self.author] = new_content
+                self.notes[self.notes.index(note)] = new_note
         return "Note ID: "+str(note_id)+" edited\n\n"
 
-note1 = NotesApplication('Isaac')
-
-note1.create('This is the start of something beautiful')
-note1.create('Done this is already')
-
-print(note1.get(0))
-print(note1.list())
-print(note1.search('is'))
 
